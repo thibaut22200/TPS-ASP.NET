@@ -1,0 +1,6 @@
+C:\Users\Thibaut\Desktop\ECOLE\TPS\TP1Module2\bin\Debug\TP1Module2.exe.config
+C:\Users\Thibaut\Desktop\ECOLE\TPS\TP1Module2\bin\Debug\TP1Module2.exe
+C:\Users\Thibaut\Desktop\ECOLE\TPS\TP1Module2\bin\Debug\TP1Module2.pdb
+C:\Users\Thibaut\Desktop\ECOLE\TPS\TP1Module2\obj\Debug\TP1Module2.csprojAssemblyReference.cache
+C:\Users\Thibaut\Desktop\ECOLE\TPS\TP1Module2\obj\Debug\TP1Module2.exe
+C:\Users\Thibaut\Desktop\ECOLE\TPS\TP1Module2\obj\Debug\TP1Module2.pdb
