@@ -120,8 +120,8 @@ namespace TP01Module03
 
             #region AFFICHER L'AUTEUR AYANT ÉCRIT LE MOINS DE LIVRES
             Console.WriteLine("Afficher l'auteur ayant écrit le moins de livres :");
-            var auteurMoinsDeLivres = ListeLivres.GroupBy(a => a.Auteur).OrderBy(g => g.Count()).FirstOrDefault().Key;
-            Console.WriteLine($"{auteurMoinsDeLivres.Prenom} {auteurMoinsDeLivres.Nom}");
+            var auteur1 = ListeAuteurs.OrderBy(a => ListeLivres.Count(l => l.Auteur == a)).FirstOrDefault();
+            Console.WriteLine($"{auteur1.Prenom} {auteur1.Nom}");
             Console.WriteLine();
             #endregion
             Console.ReadKey();
