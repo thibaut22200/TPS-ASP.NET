@@ -79,7 +79,14 @@ namespace TP02Module05_Partie_2.Controllers
 
             if(pizza != null)
             {
-                var pizzaVM = new CreateEditPizzaVM { Pizza = pizza, Ingredients = ingredients, Pates = pates };
+                var pizzaVM = new CreateEditPizzaVM 
+                {
+                    Pizza = pizza, 
+                    Ingredients = ingredients, 
+                    Pates = pates, 
+                    IdSelectedIngredients = pizza.Ingredients.Select(i => i.Id).ToList(), 
+                    IdSelectedPate = pizza.Pate.Id 
+                };
                 return View(pizzaVM);
             }
             return View("Index");
@@ -91,12 +98,11 @@ namespace TP02Module05_Partie_2.Controllers
         {
             try
             {
+                Pizza pizza = pizzas.SingleOrDefault(p => p.Id == pizzaVM.Pizza.Id);
                 if (ModelState.IsValid)
                 {
                     if(validatePizza(pizzaVM))
                     {
-                        Pizza pizza = pizzas.SingleOrDefault(p => p.Id == pizzaVM.Pizza.Id);
-
                         pizza.Nom = pizzaVM.Pizza.Nom;
                         pizza.Ingredients.Clear();
                         foreach (var idIngredient in pizzaVM.IdSelectedIngredients)
@@ -107,8 +113,13 @@ namespace TP02Module05_Partie_2.Controllers
 
                         return RedirectToAction("Index");
                     }
+                    pizzaVM.Ingredients = ingredients;
+                    pizzaVM.Pates = pates;
+                    return View(pizzaVM);
                 }
-                return View();
+                pizzaVM.Ingredients = ingredients;
+                pizzaVM.Pates = pates;
+                return View(pizzaVM);
             }
             catch
             {
@@ -165,7 +176,7 @@ namespace TP02Module05_Partie_2.Controllers
             }
             foreach (var pizza in pizzas)
             {
-                if(pizza.Ingredients.Select(p => p.Id).SequenceEqual(pizzaVM.IdSelectedIngredients))
+                if(pizza.Id != pizzaVM.Pizza.Id && pizza.Ingredients.Select(p => p.Id).SequenceEqual(pizzaVM.IdSelectedIngredients))
                 {
                     ModelState.AddModelError("pizzaMemeIngredients", "Une pizza avec les mêmes ingrédients existe déjà");
                     noError = false;
