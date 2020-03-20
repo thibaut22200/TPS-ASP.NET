@@ -1,0 +1,5 @@
+C:\Users\Thibaut\Desktop\ECOLE\TPS\BO_TP01Module06\bin\Debug\BO_TP01Module06.dll
+C:\Users\Thibaut\Desktop\ECOLE\TPS\BO_TP01Module06\bin\Debug\BO_TP01Module06.pdb
+C:\Users\Thibaut\Desktop\ECOLE\TPS\BO_TP01Module06\obj\Debug\BO_TP01Module06.csproj.CoreCompileInputs.cache
+C:\Users\Thibaut\Desktop\ECOLE\TPS\BO_TP01Module06\obj\Debug\BO_TP01Module06.dll
+C:\Users\Thibaut\Desktop\ECOLE\TPS\BO_TP01Module06\obj\Debug\BO_TP01Module06.pdb
