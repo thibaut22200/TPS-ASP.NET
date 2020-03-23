@@ -1,0 +1,24 @@
+﻿@model BO_TP01Module06.Samourai
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @Html.Partial("_SamouraisDeleteDetails")
+        <dt>
+            @Html.Label("Potentiel :")
+        </dt>
+
+        <dd>
+            @ViewBag.Potentiel
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
