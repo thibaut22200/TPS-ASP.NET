@@ -129,9 +129,16 @@ namespace TP01Module06_Partie_2.Controllers
                 {
                     samouraiDB.Arme = db.Armes.FirstOrDefault(a => a.Id == samouraiVM.IdSelectedArme);
                 }
+                samouraiDB.ArtsMartiaux.Clear();
+                if(samouraiVM.IdSelectedArtMartiaux != null)
+                {
+                    foreach (var idArtMartial in samouraiVM.IdSelectedArtMartiaux)
+                    {
+                        samouraiDB.ArtsMartiaux.Add(db.ArtMartials.Find(idArtMartial));
+                    }
+                }
                 samouraiDB.Nom = samouraiVM.Samourai.Nom;
                 samouraiDB.Force = samouraiVM.Samourai.Force;
-
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
